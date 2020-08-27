@@ -1,0 +1,29 @@
+{% extends "main/header.html" %}
+{% block content %}
+<script>
+  function Sep() {
+    document.getElementById("loading").style.display = "block";
+    location.href='{% url 'sep' audio %}';
+  }
+</script>
+<main role="main" class="inner cover">
+  <h1 class="cover-heading">Sound Source Separation</h1>
+  <div class="lead">
+  </div>
+    <p>
+      {{ audio }}
+    </p>
+    <p>
+      Mixture
+      <audio controls>
+        <source src='/media/{{audio}}' type="audio/wav">
+      </audio>
+    </p>
+    <p class="lead">
+      <button onclick="Sep()"> Separate </button>
+    </p>
+    <div id="loading" style="display: none;">
+      LOADING!!!
+    </div>
+</main>
+{% endblock %}

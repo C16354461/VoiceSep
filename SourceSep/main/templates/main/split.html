@@ -1,0 +1,26 @@
+{% extends "main/header.html" %}
+{% block content %}
+<main role="main" class="inner cover">
+  <h1 class="cover-heading">Sound Source Separation</h1>
+  <div class="lead">
+  </div>
+    <p>
+      {{ mixture }}
+    </p>
+    <p>
+      Mixture
+      <audio controls>
+        <source src= '{{ mixture }}' type="audio/wav">
+      </audio>
+    </p>
+    <p>
+      {{ vocals }}
+    </p>
+    <p>
+      Vocals
+      <audio controls>
+        <source src= '{{ vocals }}' type="audio/wav">
+      </audio>
+    </p>
+</main>
+{% endblock %}
