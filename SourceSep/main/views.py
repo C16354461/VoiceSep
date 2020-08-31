@@ -15,7 +15,7 @@ def index(request):
         with open(filepath, 'wb+') as destination:
             for chunk in f.chunks():
                 destination.write(chunk)
-        return redirect('/main/file/'+ filename)
+        return redirect('/file/'+ filename)
     else:
         return render(request, 'main/home.html')
 
@@ -31,9 +31,13 @@ def sep(request, filename):
     fileIn = os.path.join(BASE_DIR,"media", filename)
     fileOut = os.path.join(BASE_DIR,"media", "SEP" + filename)
     process.separate(fileIn, fileOut, modelname)
-    return redirect('/main/file/'+ "SEP" + filename)
 
-'''
-fs = FileSystemStorage()
-output_file = fs.get_available_name(input_file, max_length=None)
-'''
+    args['mixture'] = filename
+    args['speech'] = "SEP" + filename
+    return render(request, 'main/split.html', args)
+
+def soon(request):
+    return render(request, 'main/soon.html')
+
+def samples(request):
+    return render(request, 'main/samples.html')
