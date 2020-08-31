@@ -1,0 +1,32 @@
+{% extends "main/header.html" %}
+{% block content %}
+<main role="main" class="inner cover">
+  <h1 class="cover-heading">Samples</h1>
+  <div class="lead">
+  </div>
+    <p>
+      Heres the noisy mixed audio
+    </p>
+    <p>
+      <audio controls>
+        <source src='/media/MixSample.wav' type="audio/wav">
+      </audio>
+    </p>
+    <p>
+      Heres what just the speech should sound like
+    </p>
+    <p>
+      <audio controls>
+        <source src='/media/CleanSample.wav' type="audio/wav">
+      </audio>
+    </p>
+    <p>
+      Heres how the machine learning model did!
+    </p>
+    <p>
+      <audio controls>
+        <source src='/media/PredictedSample.wav' type="audio/wav">
+      </audio>
+    </p>
+</main>
+{% endblock %}

@@ -1,14 +1,13 @@
 {% extends "main/header.html" %}
 {% block content %}
 <main role="main" class="inner cover">
-  <h1 class="cover-heading">Sound Source Separation</h1>
-  <p class="lead">A simple way to separate the different sound sources that make up fully mixed final soungs using machine learning</p>
+  <h1 class="cover-heading">Welcome to Voice Separator</h1>
+  <p class="lead">A simple way to separate out speech sound sources from mixed noisy audio clips using machine learning. Try it out!</p>
   <div class="lead">
     <form class="md-form" method="post" enctype="multipart/form-data">
       {% csrf_token %}
       <div class="file-field">
         <div>
-          <span> Choose file </span>
           <input type="file" name="input_file">
           <button type="submit"> Upload file </button>
         </div>
